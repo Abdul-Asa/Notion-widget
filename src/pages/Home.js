@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  ChakraProvider,
   Box,
   VStack,
   Grid,
@@ -9,26 +8,56 @@ import {
   Heading,
   Input,
   HStack,
+  Flex,
+  Stack,
+  Center,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from '../components/ColorModeSwitcher';
-// import { Logo } from './Logo';
+import { useNavigate } from 'react-router-dom';
+import SnapContainer from '../components/SnapContainer';
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8} w={['90%', '50%']} justifySelf="center">
-            <Heading>Logged out</Heading>
-            <Input type={'email'} maxW="300px" placeholder="test@gmail.com" />
-            <HStack spacing={4}>
-              <Button>Login</Button> <Button>Sign up</Button>
-            </HStack>
-          </VStack>
-        </Grid>
-      </Box>
-    </ChakraProvider>
+    <Box
+      textAlign="center"
+      fontSize="xl"
+      h="100vh"
+      overflowY={'scroll'}
+      scrollSnapType="y mandatory"
+    >
+      <SnapContainer bg="brown">
+        <Flex justify={'flex-end'}>
+          <ColorModeSwitcher />
+        </Flex>
+        <Stack align={'center'} justifyContent="center" h="80%">
+          <Heading>Home</Heading>
+          <Button onClick={() => navigate('/login')}>Login</Button>
+          <Button onClick={() => navigate('/signup')}>Signup</Button>
+        </Stack>
+      </SnapContainer>
+      <SnapContainer bg="orange">
+        <Flex justify={'flex-end'}>
+          <ColorModeSwitcher />
+        </Flex>
+        <Stack align={'center'} justifyContent="center" h="80%">
+          <Heading>Home2</Heading>
+          <Button onClick={() => navigate('/login')}>Login</Button>
+          <Button onClick={() => navigate('/signup')}>Signup</Button>
+        </Stack>
+      </SnapContainer>
+      <SnapContainer bg="teal">
+        <Flex justify={'flex-end'}>
+          <ColorModeSwitcher />
+        </Flex>
+        <Stack align={'center'} justifyContent="center" h="80%">
+          <Heading>Home3</Heading>
+          <Button onClick={() => navigate('/login')}>Login</Button>
+          <Button onClick={() => navigate('/signup')}>Signup</Button>
+        </Stack>
+      </SnapContainer>
+    </Box>
   );
 }
 

@@ -42,7 +42,7 @@ const RandomQuote = () => {
       return { ...el, [name]: value };
     });
     seturl(
-      `${location.pathname}url?styling=theme:${style.theme},size:${style.size},tags:${style.tags}`
+      `${location.pathname}/url?styling=theme:${style.theme},size:${style.size},tags:${style.tags}`
     );
   };
   useEffect(() => {

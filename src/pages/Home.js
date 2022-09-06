@@ -68,7 +68,9 @@ function Home() {
         >
           <Heading>Home2</Heading>
           <Button onClick={() => navigate('/login')}>Login</Button>
-          <Button onClick={() => navigate('/signup')}>Signup</Button>
+          <Button onClick={() => navigate('/generate-quote')}>
+            Generate Random Quote
+          </Button>
         </Stack>
       </SnapContainer>
       <SnapContainer
@@ -84,7 +86,7 @@ function Home() {
         >
           <Heading>Home3</Heading>
           <Button onClick={() => navigate('/login')}>Login</Button>
-          <Button onClick={() => navigate('/signup')}>Signup</Button>
+          {/* <Button onClick={() => navigate('/signup')}>Signup</Button> */}
         </Stack>
       </SnapContainer>
     </Box>

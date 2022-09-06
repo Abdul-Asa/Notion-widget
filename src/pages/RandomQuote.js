@@ -11,20 +11,21 @@ import {
   Select,
   FormLabel,
 } from '@chakra-ui/react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SnapContainer from '../components/SnapContainer';
 import { getRandomQuote } from '../utils/quotable.api';
 import { FaArrowLeft } from 'react-icons/fa';
 import { BsArrowClockwise, BsClipboard } from 'react-icons/bs';
 import { FaClipboardCheck } from 'react-icons/fa';
 
-const RandomQuote = () => {
+const RandomQuote = ({ location }) => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const currentURL = window.location.href; // returns the absolute URL of a page
   console.log(location);
   const [quote, setquote] = useState('');
+  const [tags, setTags] = useState('');
   const [url, seturl] = useState('');
-  const [style, setstyle] = useState({ theme: '', size: 'sm', tags: '' });
+  const [style, setstyle] = useState({ theme: '', size: 'sm' });
   const shuffle = () => {
     getRandomQuote(style.tags)
       .then(res => {
@@ -35,19 +36,23 @@ const RandomQuote = () => {
         console.log(err);
       });
   };
-  const { hasCopied, onCopy } = useClipboard(url);
+  let { hasCopied, onCopy } = useClipboard(url);
   const handleChange = e => {
     const { value, name } = e.target;
-    setstyle(el => {
-      return { ...el, [name]: value };
-    });
-    seturl(
-      `${location.pathname}/url?styling=theme:${style.theme},size:${style.size},tags:${style.tags}`
-    );
+    name === 'tags'
+      ? setTags(value)
+      : setstyle(el => {
+          return { ...el, [name]: value };
+        });
   };
   useEffect(() => {
     shuffle();
   }, []);
+  useEffect(() => {
+    seturl(
+      `${currentURL}/url?styling=theme:${style.theme},size:${style.size},tags:${tags}`
+    );
+  }, [currentURL, style, tags]);
 
   return (
     <Box h="100vh" overflowY={'scroll'} scrollSnapType="y mandatory">

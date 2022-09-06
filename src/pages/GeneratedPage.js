@@ -28,7 +28,7 @@ const GeneratedQuote = () => {
     author: 'Your device',
   });
   const [style] = useState({
-    theme: styling.substring(themeParam + 6, sizeParam - 1) || '',
+    theme: styling.substring(themeParam + 6, sizeParam - 1) || 'Light',
     size: styling.substring(sizeParam + 5, tagParam - 1) || 'sm',
     tags: styling.substring(tagParam + 5, styling.length) || '',
   });

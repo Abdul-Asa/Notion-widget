@@ -6,7 +6,6 @@ import {
   Button,
   Heading,
   Input,
-  HStack,
   Text,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from '../components/ColorModeSwitcher';
@@ -16,7 +15,6 @@ import {
   signupFunction,
   loginFunction,
   authentication,
-  logout,
 } from '../utils/firebase.auth';
 const Entry = ({ type }) => {
   const [user, loading, error] = useAuthState(authentication);
@@ -87,7 +85,7 @@ const Entry = ({ type }) => {
   useEffect(() => {
     if (user) navigate('/welcome');
     if (error) console.log(error);
-  }, [user]);
+  }, [user, error, navigate]);
 
   return (
     <Box textAlign="center" fontSize="xl">

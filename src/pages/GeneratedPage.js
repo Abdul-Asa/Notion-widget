@@ -27,7 +27,7 @@ const GeneratedQuote = () => {
     content: 'Error. Broken Link',
     author: 'Your device',
   });
-  const [style, setstyle] = useState({
+  const [style] = useState({
     theme: styling.substring(themeParam + 6, sizeParam - 1) || '',
     size: styling.substring(sizeParam + 5, tagParam - 1) || 'sm',
     tags: styling.substring(tagParam + 5, styling.length) || '',
@@ -65,11 +65,13 @@ const GeneratedQuote = () => {
           icon={hasCopied ? <FaClipboardCheck /> : <BsClipboard />}
           variant="ghost"
           onClick={onCopy}
+          color={style.theme === 'Dark' ? 'whiteAlpha.900' : 'black'}
         />
         <IconButton
           icon={<BsArrowClockwise />}
           variant="ghost"
           onClick={shuffle}
+          color={style.theme === 'Dark' ? 'whiteAlpha.900' : 'black'}
         />
       </Stack>
     </Stack>

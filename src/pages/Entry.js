@@ -24,14 +24,9 @@ const Entry = ({ type }) => {
   const [form, setForm] = useState({ email: '', password: '' });
   const handleChange = e => {
     const { value, name } = e.target;
-    name === 'email' &&
-      setForm(el => {
-        return { ...el, [name]: value };
-      });
-    name === 'password' &&
-      setForm(el => {
-        return { ...el, [name]: value };
-      });
+    setForm(el => {
+      return { ...el, [name]: value };
+    });
   };
   const onLogin = form => {
     const data = loginFunction(form);

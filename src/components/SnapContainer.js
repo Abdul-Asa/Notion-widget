@@ -1,4 +1,4 @@
-import React, { Children, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   VStack,
@@ -10,8 +10,7 @@ import {
   HStack,
   Text,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from '../components/ColorModeSwitcher';
-import { useNavigate } from 'react-router-dom';
+
 // import { Logo } from './Logo';
 
 const SnapContainer = ({ children, ...props }) => {

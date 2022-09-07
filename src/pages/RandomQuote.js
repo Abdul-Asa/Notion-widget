@@ -21,7 +21,6 @@ import { FaClipboardCheck } from 'react-icons/fa';
 const RandomQuote = ({ location }) => {
   const navigate = useNavigate();
   const currentURL = window.location.href; // returns the absolute URL of a page
-  console.log(location);
   const [quote, setquote] = useState('');
   const [tags, setTags] = useState('');
   const [url, seturl] = useState('');

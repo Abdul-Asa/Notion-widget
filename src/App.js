@@ -1,6 +1,6 @@
 import React from 'react';
-// import theme from './Theme';
-import { ChakraProvider, theme } from '@chakra-ui/react';
+import theme from './Theme';
+import { ChakraProvider } from '@chakra-ui/react';
 // import Spinner from './components/Elements/Spinner';
 import { BrowserRouter } from 'react-router-dom';
 import RoutesJs from './routes/RouteList';

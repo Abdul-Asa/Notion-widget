@@ -8,7 +8,7 @@ import {
   Input,
   Text,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from '../components/ColorModeSwitcher';
+import { ColorModeSwitcher } from '../components/IconButtons';
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import {

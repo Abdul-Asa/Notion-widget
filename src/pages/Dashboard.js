@@ -14,7 +14,7 @@ import {
   Stack,
   Center,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from '../components/ColorModeSwitcher';
+import { ColorModeSwitcher } from '../components/IconButtons';
 import { useNavigate } from 'react-router-dom';
 import { useInView } from 'framer-motion';
 import SnapContainer from '../components/SnapContainer';

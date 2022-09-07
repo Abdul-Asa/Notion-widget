@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const getRandomQuote = async tag => {
-  console.log(tag);
   if (!tag) {
     return axios('https://api.quotable.io/random')
       .then(response => {

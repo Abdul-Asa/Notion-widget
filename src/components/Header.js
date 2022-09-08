@@ -14,9 +14,12 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher, SoundButton } from './IconButtons';
+import { useLocation } from 'react-router-dom';
 // import { Logo } from './Logo';
 
 const Header = ({ children, ...props }) => {
+  const { pathname } = useLocation();
+
   return (
     <Flex
       justify={'space-between'}
@@ -29,11 +32,21 @@ const Header = ({ children, ...props }) => {
       alignItems="center"
       p="2"
       fontSize={'14px'}
-      px="16px"
+      px={[0, '16px']}
+      overflowX={'hidden'}
     >
-      <Stack spacing={2} direction="row" alignItems={'center'}>
+      <Stack pl={[0, '4']} spacing={2} direction="row" alignItems={'center'}>
         <span>🗿</span>
-        <Text overflow={'clip'}>Notion Quote Page / Home </Text>
+        <Text as="a" href="/" textOverflow={'ellipsis'}>
+          Notion Quotes /
+        </Text>
+        <span>🏡</span>
+        <Text as="a" href={pathname}>
+          {pathname === '/' && 'Home'}
+          {pathname === '/generate-quote' && 'Get Random Quotes'}
+          {pathname === '/login' && 'Login'}
+          {pathname === '/signup' && 'Signup'}
+        </Text>
       </Stack>
 
       <Wrap>

@@ -17,6 +17,7 @@ import { getRandomQuote } from '../utils/quotable.api';
 import { FaArrowLeft } from 'react-icons/fa';
 import { BsArrowClockwise, BsClipboard } from 'react-icons/bs';
 import { FaClipboardCheck } from 'react-icons/fa';
+import Header from '../components/Header';
 
 const RandomQuote = ({ location }) => {
   const navigate = useNavigate();
@@ -55,6 +56,7 @@ const RandomQuote = ({ location }) => {
 
   return (
     <Box h="100vh" overflowY={'scroll'} scrollSnapType="y mandatory">
+      <Header />
       <SnapContainer>
         <Flex justify={'flex-start'} p={4}>
           <IconButton icon={<FaArrowLeft />} onClick={() => navigate('/')} />

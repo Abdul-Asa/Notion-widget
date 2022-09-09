@@ -6,7 +6,7 @@ import { getAnalytics } from 'firebase/analytics';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: 'AIzaSyBNUYX-jLBJb6oQjU9grZ1a_vrgxtrRNWQ',
   authDomain: 'notion-e5158.firebaseapp.com',
   projectId: 'notion-e5158',
@@ -14,6 +14,8 @@ const firebaseConfig = {
   messagingSenderId: '1005889757670',
   appId: '1:1005889757670:web:eaa988b8bbc3224a5a7627',
   measurementId: 'G-5VJV9V70ND',
+  databaseURL:
+    'https://notion-e5158-default-rtdb.europe-west1.firebasedatabase.app',
 };
 
 // Initialize Firebase

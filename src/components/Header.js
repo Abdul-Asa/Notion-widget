@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Flex,
-  useColorMode,
   useColorModeValue,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
+  useMediaQuery,
   Text,
   Wrap,
-  Icon,
-  WrapItem,
   Stack,
+  IconButton,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher, SoundButton } from './IconButtons';
-import { useLocation } from 'react-router-dom';
-// import { Logo } from './Logo';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 
 const Header = ({ children, ...props }) => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const [isPhoneSize] = useMediaQuery(['(max-width: 470px)']);
+  const invColor = useColorModeValue('white', '#191919');
 
   return (
     <Flex
@@ -31,22 +29,55 @@ const Header = ({ children, ...props }) => {
       zIndex={'docked'}
       alignItems="center"
       p="2"
+      shadow={'sm'}
       fontSize={'14px'}
       px={[0, '16px']}
       overflowX={'hidden'}
     >
-      <Stack pl={[0, '4']} spacing={2} direction="row" alignItems={'center'}>
-        <span>🗿</span>
-        <Text as="a" href="/" textOverflow={'ellipsis'}>
-          Notion Quotes /
-        </Text>
-        <span>🏡</span>
+      <Stack pl={'4'} spacing={2} direction="row" alignItems={'center'}>
+        {!isPhoneSize && (
+          <>
+            <span>🗿</span>
+            <Text as="a" href="/" textOverflow={'ellipsis'}>
+              Notion Quotes /
+            </Text>
+          </>
+        )}
+        <span>
+          {' '}
+          {pathname === '/' && '🏡'}
+          {pathname === '/generate-quote' && '🎯'}
+          {pathname === '/login' && '🚪'}
+          {pathname === '/signup' && '📬'}
+        </span>
         <Text as="a" href={pathname}>
           {pathname === '/' && 'Home'}
           {pathname === '/generate-quote' && 'Get Random Quotes'}
           {pathname === '/login' && 'Login'}
           {pathname === '/signup' && 'Signup'}
         </Text>
+        {!(pathname === '/') && (
+          <Flex justifyContent={'center'}>
+            <IconButton
+              bg={invColor}
+              _hover={{ bgColor: invColor }}
+              // justifyContent={'c'}
+              h="fit-content"
+              icon={<FiArrowLeft />}
+              onClick={() => {
+                navigate(-1);
+              }}
+            />
+            <IconButton
+              isDisabled
+              bg={invColor}
+              _hover={{ bgColor: invColor }}
+              justifyContent={'start'}
+              h="fit-content"
+              icon={<FiArrowRight />}
+            />
+          </Flex>
+        )}
       </Stack>
 
       <Wrap>

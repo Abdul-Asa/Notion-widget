@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Box, Link, Stack } from '@chakra-ui/react';
-import { ColorModeSwitcher, SoundButton } from './IconButtons';
+import React from 'react';
+import { Box, Link } from '@chakra-ui/react';
+// import { ColorModeSwitcher, SoundButton } from './IconButtons';
 // import { Logo } from './Logo';
 
 const Footer = ({ children, ...props }) => {
@@ -10,7 +10,7 @@ const Footer = ({ children, ...props }) => {
       fontSize={['xs', 'sm']}
       as="footer"
       position={'sticky'}
-      p="10"
+      p={[4, '10']}
     >
       Made with {'\u00a0'}
       <span

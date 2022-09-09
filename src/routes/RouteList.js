@@ -10,7 +10,7 @@ const RoutesJs = () => {
   return (
     <Routes>
       <Route exact path="/" element={<Home />}></Route>
-      <Route path="/signup" element={<Entry type={'Signup'} />}></Route>
+      <Route path="/signup" element={<Entry type={'Sign up'} />}></Route>
       <Route path="/login" element={<Entry type={'Login'} />}></Route>
       <Route path="/welcome" element={<Dashboard />}></Route>
       <Route path="/generate-quote" element={<RandomQuote />}></Route>

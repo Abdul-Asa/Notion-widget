@@ -13,24 +13,28 @@ import { FaClipboardCheck } from 'react-icons/fa';
 
 const GeneratedQuote = () => {
   const [searchParams] = useSearchParams();
-  const styling = searchParams.get('styling');
-  const themeParam = styling.lastIndexOf('theme');
-  const sizeParam = styling.lastIndexOf('size');
-  const tagParam = styling.lastIndexOf('tag');
+  const theme = searchParams.get('theme');
+  const size = searchParams.get('size');
+  const tag = searchParams.get('tag');
 
-  console.log({
-    theme: styling.substring(themeParam + 6, sizeParam - 1),
-    size: styling.substring(sizeParam + 5, tagParam - 1),
-    tags: styling.substring(tagParam + 5, styling.length),
-  });
+  // const themeParam = styling.lastIndexOf('theme');
+  // const sizeParam = styling.lastIndexOf('size');
+  // const tagParam = styling.lastIndexOf('tag');
+
+  console.log({ theme, size, tag });
+  //   {
+  //   theme: styling.substring(themeParam + 6, sizeParam - 1),
+  //   size: styling.substring(sizeParam + 5, tagParam - 1),
+  //   tags: styling.substring(tagParam + 5, styling.length),
+  // });
   const [quote, setquote] = useState({
     content: 'Error. Broken Link',
     author: 'Your device',
   });
   const [style] = useState({
-    theme: styling.substring(themeParam + 6, sizeParam - 1) || 'Light',
-    size: styling.substring(sizeParam + 5, tagParam - 1) || 'sm',
-    tags: styling.substring(tagParam + 5, styling.length) || '',
+    theme: theme || 'Light',
+    size: size || 'sm',
+    tags: tag || '',
   });
   const shuffle = () => {
     getRandomQuote(style.tags)

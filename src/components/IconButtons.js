@@ -5,6 +5,7 @@ import {
   createIcon,
   IconButton,
 } from '@chakra-ui/react';
+
 // import { FaSun, FaVolumeUp, FaVolumeOff } from 'react-icons/fa';
 import {
   HiOutlineMoon,
@@ -55,4 +56,9 @@ export const Icon1 = createIcon({
   displayName: 'Icon1',
   viewBox: '0 0 20 20',
   d: 'M8.333 10.833h-5a.833.833 0 00-.833.834v5a.833.833 0 00.833.833h5a.833.833 0 00.834-.833v-5a.833.833 0 00-.834-.834zm-.833 5H4.167V12.5H7.5v3.333zM16.667 2.5h-5a.833.833 0 00-.834.833v5a.833.833 0 00.834.834h5a.833.833 0 00.833-.834v-5a.833.833 0 00-.833-.833zm-.834 5H12.5V4.167h3.333V7.5zm.834 5.833H15v-1.666a.833.833 0 00-1.667 0v1.666h-1.666a.833.833 0 000 1.667h1.666v1.667a.833.833 0 001.667 0V15h1.667a.833.833 0 000-1.667zM8.333 2.5h-5a.833.833 0 00-.833.833v5a.833.833 0 00.833.834h5a.833.833 0 00.834-.834v-5a.833.833 0 00-.834-.833zm-.833 5H4.167V4.167H7.5V7.5z',
+});
+export const Icon2 = createIcon({
+  displayName: 'Icon2',
+  viewBox: '0 0 24 24',
+  d: 'M7 17L17 7M7 7h10v10',
 });

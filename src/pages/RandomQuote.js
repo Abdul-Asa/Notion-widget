@@ -127,7 +127,7 @@ const RandomQuote = ({ location }) => {
                 <Select name="tags" onChange={handleChange}>
                   <option value="">Random</option>
                   <option value="wisdom">Wisdom</option>
-                  <option value="friends">Friendship</option>
+                  <option value="friendship">Friendship</option>
                   <option value="inspirational">Inspirational</option>
                   <option value="famous-quotes">Famous Quotes</option>
                 </Select>

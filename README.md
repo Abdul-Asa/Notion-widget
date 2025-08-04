@@ -1,70 +1,210 @@
-# Notion Widget
+# 📝 Notion Quote Widget
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A beautiful, customizable quote widget generator for Notion pages. Create inspiring quote widgets with live previews and embed them directly into your Notion workspace.
 
-## Available Scripts
+![Notion Quote Widget Screenshot](https://img.shields.io/badge/React-18.2.0-blue) ![Chakra UI](https://img.shields.io/badge/Chakra%20UI-2.3.1-teal) ![Firebase](https://img.shields.io/badge/Firebase-9.9.4-orange)
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### 🎨 **Widget Customization**
 
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Themes**: Light and Dark mode support
+- **Typography**: Multiple size options (Text, Heading 1-3)
+- **Categories**: Wisdom, Friendship, Inspirational, and Famous Quotes
+- **Live Preview**: See your widget design in real-time
 
-The page will reload if you make edits
-You will also see any lint errors in the console.
+### 🔄 **Dynamic Content**
 
-### `npm test`
+- Random quote generation using [Quotable API](https://quotable.io)
+- Refresh functionality to get new quotes
+- Copy-to-clipboard for easy sharing
+- Category-based quote filtering
 
-Launches the test runner in the interactive watch mode.
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🎯 **Notion Integration**
 
-### `npm run build`
+- Generate embeddable URLs for Notion
+- Seamless widget embedding workflow
+- Responsive design for different screen sizes
 
-Builds the app for production to the `build` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🎭 **Beautiful UI/UX**
 
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
+- Smooth scroll animations with Framer Motion
+- Responsive design for all devices
+- Interactive like system
+- Modern, clean interface with Chakra UI
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🔐 **User Authentication**
 
-### `npm run eject`
+- Firebase authentication system
+- User dashboard for logged-in users
+- Custom quote management (feature in development)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🚀 Getting Started
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Node.js (v14 or higher)
+- npm or yarn
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Installation
 
-## Learn More
+1. **Clone the repository**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   git clone https://github.com/your-username/notion-widget.git
+   cd notion-widget
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Install dependencies**
 
-### Code Splitting
+   ```bash
+   npm install
+   ```
 
-This section has moved here: <https://facebook.github.io/create-react-app/docs/code-splitting>
+3. **Start the development server**
 
-### Analyzing the Bundle Size
+   ```bash
+   npm start
+   ```
 
-This section has moved here: <https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size>
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-### Making a Progressive Web App
+## 🛠️ Usage
 
-This section has moved here: <https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app>
+### Creating a Quote Widget
 
-### Advanced Configuration
+1. **Visit the Widget Designer**
 
-This section has moved here: <https://facebook.github.io/create-react-app/docs/advanced-configuration>
+   - Go to the `/generate-quote` page
+   - Or click "Random Quotes" from the homepage
 
-### Deployment
+2. **Customize Your Widget**
 
-This section has moved here: <https://facebook.github.io/create-react-app/docs/deployment>
+   - Choose between Light/Dark themes
+   - Select typography size (Text, Heading 1-3)
+   - Pick a quote category or leave random
+   - Preview changes in real-time
 
-### `npm run build` fails to minify
+3. **Generate Embed URL**
 
-This section has moved here: <https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify>
+   - Click "Copy URL" to get the embeddable link
+   - The URL contains all your customization parameters
+
+4. **Embed in Notion**
+   - Paste the URL in a Notion block
+   - Select "Create Embed" from the dropdown
+   - Enjoy your custom quote widget! 🎉
+
+### Example Usage
+
+```
+https://your-domain.com/generate-quote/url?theme=Dark&size=lg&tag=wisdom
+```
+
+## 🏗️ Built With
+
+- **[React](https://reactjs.org/)** - Frontend framework
+- **[Chakra UI](https://chakra-ui.com/)** - Component library
+- **[Framer Motion](https://www.framer.com/motion/)** - Animation library
+- **[Firebase](https://firebase.google.com/)** - Authentication & database
+- **[React Router](https://reactrouter.com/)** - Client-side routing
+- **[Quotable API](https://quotable.io)** - Quote data source
+- **[Axios](https://axios-http.com/)** - HTTP client
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Header.js       # Navigation header
+│   ├── Footer.js       # Page footer
+│   ├── IconButtons.js  # Icon button components
+│   └── Images/         # Image assets
+├── pages/              # Application pages
+│   ├── Home.js         # Landing page
+│   ├── RandomQuote.js  # Widget designer
+│   ├── GeneratedPage.js # Embeddable widget
+│   ├── Dashboard.js    # User dashboard
+│   └── Entry.js        # Login/Signup
+├── routes/             # Route configuration
+├── utils/              # Utility functions
+│   ├── firebase.auth.js
+│   ├── firebase.config.js
+│   └── quotable.api.js
+└── Theme.js            # Chakra UI theme
+```
+
+## 🔧 Available Scripts
+
+### Development
+
+```bash
+npm start          # Start development server
+npm test           # Run test suite
+npm run build      # Build for production
+```
+
+### Build Output
+
+- Creates optimized production build in `build/` folder
+- Includes code splitting and minification
+- Ready for deployment to any static hosting service
+
+## 🌐 API Integration
+
+The app integrates with the [Quotable API](https://quotable.io) to fetch random quotes:
+
+```javascript
+// Get random quote
+GET https://api.quotable.io/random
+
+// Get quote by category
+GET https://api.quotable.io/random?tags=wisdom
+```
+
+## 🔮 Future Enhancements
+
+- [ ] Custom quote management for authenticated users
+- [ ] Additional widget themes and styles
+- [ ] Favorite quotes system
+- [ ] Share widgets on social media
+- [ ] Picture slideshow widgets
+- [ ] Quote scheduling and rotation
+- [ ] Widget analytics
+
+## 🎯 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- **Design Inspiration**: [Mauricio Quezada](https://www.figma.com/community/file/877573866872969565) & [Notion](https://www.figma.com/community/file/956676366169840092)
+- **Quote API**: [Quotable by Luke Peavey](https://github.com/lukePeavey/quotable)
+- **GitHub Inspiration**: [Saman's notion-quote](https://github.com/saman/notion-quote)
+- **Quotes**: Powered by [Quotable API](https://quotable.io)
+
+---
+
+**Note**: This project is not officially affiliated with Notion. It's an independent tool created to enhance Notion workspace productivity.
+
+## 📞 Support
+
+If you found this project helpful, consider:
+
+- ⭐ Starring the repository
+- 🐦 Following on [Twitter](https://twitter.com/AbdullahShehu1)
+- 🐛 Reporting issues
+- 💡 Suggesting new features
+
+Made with ❤️ for the Notion community
